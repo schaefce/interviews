@@ -1,0 +1,106 @@
+EOPI
+
+14.1 Write a function that takes as input the root of a binary tree whose nodes have a key filed and returns true if the tree satisfies the BST property.
+
+    APPROACH 1: RECURSION
+        MAIN IDEA:
+            Start with root r and the constraints on r's value (lower, upper)
+            Check that the value at r is within these constraints
+            Recursively check constraints on r.left (lower, r's value)
+            Recursively check constraints on r.right (r's value, upper)
+
+        ANALYSIS:
+            TIME:   O(N)
+            SPACE:  O(h)
+
+        PSEUDOCODE:
+            boolean checkIfBST(root):
+                return checkIfBST(root, min_int, max_int):
+
+            boolean checkIfBST(root, lower, upper):
+                if root is null return true
+                if root.val is not in range [lower, upper] return false
+                return checkIfBST(root.left, lower, root.val) AND
+                    checkIfBST(root.right, root.val, upper)
+
+    APPROACH 2: INORDER TRAVERSAL ******
+
+    APPROACH 3: BFS
+        MAIN IDEA:
+            Create a queue of {node, lower, upper} objects
+            Enqueue {root, MIN_INT, MAX_INT}
+            While not empty, dequeue the front object and check constraints
+                Enqueue {left, lower, value}, {right, value, upper}
+            Return true at end
+
+        ANALYSIS:
+            TIME:   O(d), where d is depth of of first violation
+            SPACE:
+
+        PSEUDOCODE:
+            boolean checkIfBST(root):
+                queue <- linked list of {node, lower, upper} objects
+                insert {root, MIN_INT, MAX_INT} at front of queue
+                while queue isn't empty
+                    curr <- first object in queue
+                    if curr is not null
+                        check bounds of curr return false if fails check
+                        insert {curr.n.left, curr.lower, curr.n.val} to back
+                        insert {curr.n.right, curr.n.val, curr.upper} to back
+                    remove curr from front of queue
+                return true
+
+
+14.4 Write a function that takes a BST T and a key k, and returns the first entry larger than k that would appear in an inorder walk. If k is absent or no key larger than k is present, return null.
+
+    MAIN IDEA:
+        Maintain a candidate node, first (initialized to null)
+        Look for k using standard search idiom while current node not null:
+            If current node's key larger than k, update first & search left
+            If current node's key smaller than k, search right
+            If current node's key equals k, set foundK true & search right
+        After first is assigned, desired result is within subtree root first
+
+    ANALYSIS:
+        TIME:   O(N)
+        SPACE:  O(1)
+
+    PSEUDOCODE:
+        BTNode searchBST(root, k):
+            foundK <- false
+            curr <- root
+            first <- null
+            while curr is not null
+                if curr's value equals k
+                    foundK <- true
+                    curr <- curr.right // search right subtree for larger than k
+                else if curr's value is greater than k
+                    first <- curr // so far this is the first occurrence
+                    curr <- curr.left // search left subtree for better
+                else
+                    curr <- curr.right // search right subtree
+            if foundK
+                return first
+            else
+                return null
+
+14.11 Which traversal orders- inorder, preorder, and postorder- of a BST can
+be used to reconstruct the BST uniquely? Write a program that takes as input a sequence of node keys and computes the corresponding BST. Assume that all keys are unique.
+
+    ANSWER: Preorder traversal... Why?
+
+    MAIN IDEA:
+        Globally keep track of index of list
+        Keep track of current minimum and current maximum
+        Recursively build tree by building root and adding left/right subtrees
+
+    PSEUDOCODE:
+        constructBST(preorder):
+            return constructBST(preorder, MIN_VALUE, MAX_VALUE)
+
+        constructBST(preorder, min, max):
+            if index is size of preorder list return null
+            curr <- preorder.get(index)
+            if curr is less than min or greater than max return null
+            increment index
+            return new BTNode(constructBST(preorder, min, curr), constructBST(preorder, curr, max), curr)

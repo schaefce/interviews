@@ -1,0 +1,51 @@
+EOPI
+
+12.1 Design a hash function for dictionaries.
+    Hash function should examine all characters of each word
+    Rolling hash function: if character deleted from front and another added at end, recalculate hash in O(1) time
+    ****** COME BACK TO THIS.
+
+
+12.7 Write a function that takes as input a dictionary of English words, and      returns a partition of the dictionary into subsets of words that are all anagrams of each other.
+
+    MAIN IDEA:
+        Create hashmap of anagrams keys (sorted) to lists of strings
+        For each string, sort to get anagram key and add string to end of list
+        Iterate through keys of hashmap, print out lists longer than 1 word
+
+    PSEUDOCODE:
+        void partitionAnagrams(dict):
+            anagramHash <- map of string keys to lists of strings
+            for string s in dict
+                anagramString <- sort(s)
+                if anagramString not in anagramHash keyset
+                    anagramHash.put(anagramString, new list of strings)
+                anagramHash.get(anagramString).add(s)
+            for key in anagramHash keyset
+                if anagramHash.get(key).size() >= 2
+                    print out anagramHash.get(key)
+
+12.9 You are required to write a method which takes an anonymous letter L and text from magazine M. Your method is to return true iff L can be written using M i.e. if a letter appears k times in L, it must appear at least k times in M.
+
+    MAIN IDEA:
+        Create hashmap of letters in L to their frequency
+        For each letter in M & in hashmap, decrement frequency of letter
+            Remove letters with frequency 0 from hashmap
+        If the hashmap is empty, we have covered all letters in L (return true)
+
+    PSEUDOCODE:
+        boolean anonymousLetter(L, M):
+            letters <- map of characters to integers
+            for character c in L
+                if letters contains key c
+                    letters.put(c, letters.get(c) + 1)
+                else
+                    letters.put(c, 1)
+            for character c in M
+                if letters contains key c
+                    letters.put(c, letters.get(c) - 1)
+                    if letters.get(c) == 0
+                        letters.remove(c)
+                        if letters.isEmpty
+                            return true
+            return letters.isEmpty
