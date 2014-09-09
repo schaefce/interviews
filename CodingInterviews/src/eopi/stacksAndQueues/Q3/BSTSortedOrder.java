@@ -1,10 +1,14 @@
 package eopi.stacksAndQueues.Q3;
 
+import java.util.Stack;
+
+import eopi.library.BTNodeTemplate.BTNode;
+
 /* 8.3 Given a BST node n, print all the keys at n and its descendants. The nodes should be printed in sorted order, and you cannot use recursion. */
 
 public class BSTSortedOrder{
     public static <Item> void printSorted(BTNode<Item> n){
-        Stack<Item> stack = new Stack<Item>();
+        Stack<BTNode<Item>> stack = new Stack<>();
         if(n == null){
             return;
         }
