@@ -1,0 +1,59 @@
+CTCI
+3.1 (THREE STACKS WITH ARRAY) Implement three stacks using a single array.
+    VERSION 1: Fixed Boundaries Solution
+
+    VERSION 2: Dynamic Boundaries Solution
+
+
+3.2 (MIN STACK) Design a stack which, in addition to push and pop, also has a function min which returns the minimum element. Push, pop, and min should all operate in O(1) time.
+    VERSION 1: Special Node Solution
+
+    VERSION 2: Min Stack Solution
+        MAIN IDEA:
+            Create separate stack of minimums.
+            push(item) -- if item <= min() minStack.push(item)
+            pop() -- if item == min() minStack.pop()
+            min() -- minStack empty ? return MAX_INT : return minStack.peek
+
+3.3 (SET OF STACKS) Imagine a (literal) stack of plates. If the stack gets too high, it might topple. * Therefore, in real life, we would likely start a new stack when the previous stack exceeds some threshold. * Implement a data structure SetOfStacks that mimics this. * SetOfStacks should be composed of several stacks and should create a new stack once the previous one exceeds capacity. * SetOfStacks.push() and SetOfStacks.pop() should behave identically to a single stack * (that is, pop() should return the same values as it would if there were just a single stack). * FOLLOW UP * Implement a function popAt(int index) which performs a pop operation on a specific sub-stack.
+
+
+3.5 (TWO STACK QUEUE) Implement a queue using two stacks.
+
+    MAIN IDEA:
+        Two stacks - newAtTop and oldAtTop
+            enqueue(item) -- newAtTop.push(item)
+            shiftStacks() -- oldAtTop empty ? oldAtTop.push(all from newAtTop)
+            dequeue() -- shiftStacks(), then oldAtTop.pop
+            peek() -- shiftStacks(), then oldAtTop.peek
+
+
+3.6 (SORT STACK) Write a program to sort a stack in ascending order (with biggest items on top). You may use at most one additional stack to hold items, but you may not copy the elements into any other data structure (such as an array). The stack supports the following operations: push, pop, peek, and isEmpty.
+
+    MAIN IDEA:
+        Create a new stack s2 that will be sorted
+
+    PSEUDOCODE:
+        void sort():
+            tmp <- s1.pop
+            // temporarily move items in s2 > tmp over to s1
+            while !s2.isEmpty && s2.peek > tmp
+                s1.push(s2.pop)
+            s2.push(tmp)
+
+
+3.7 (ANIMAL QUEUE) An animal shelter holds only dogs and cats, and operates on a strictly "first in, first out" basis. People must adopt either the "oldest" (based on arrival time) of all animals at the shelter, or they can select whether they would prefer a dog or a cat (and will receive the oldest animal of that type). They cannot select which specific animal they would like. Create the data structures to maintain this system and implement operations such as enqueue, dequeueAny, dequeueDog and dequeueCat. You may use the built-in LinkedList data structure.
+
+    Create abstract class Animal and classes Dog and Cat to extend Animal
+        Animal
+            - int arrivalTime
+            - String name
+            + Animal(String)
+            + getArrivalTime() : int
+            + setArrivalTime(int) : void
+            + isOlderThan(Animal) : boolean
+    Use two linked lists, one of cats and one of dogs. Also, need to track time
+        enqueue(Animal a) -- a.setArrivalTime(time). time++. add to correct list
+        dequeueAny() -- if either list empty, dequeue other. peek to get oldest cat and dog in lists. dequeue older.
+        dequeueCat() -- poll function removes head of list
+        dequeueDog() -- poll function removes head of list

@@ -1,12 +1,12 @@
 EOPI
 
-12.1 Design a hash function for dictionaries.
+12.1 (HASH FUNCTION) Design a hash function for dictionaries.
     Hash function should examine all characters of each word
     Rolling hash function: if character deleted from front and another added at end, recalculate hash in O(1) time
     ****** COME BACK TO THIS.
 
 
-12.7 Write a function that takes as input a dictionary of English words, and      returns a partition of the dictionary into subsets of words that are all anagrams of each other.
+12.7 (ANAGRAMS) Write a function that takes as input a dictionary of English words, and returns a partition of the dictionary into subsets of words that are all anagrams of each other.
 
     MAIN IDEA:
         Create hashmap of anagrams keys (sorted) to lists of strings
@@ -25,7 +25,7 @@ EOPI
                 if anagramHash.get(key).size() >= 2
                     print out anagramHash.get(key)
 
-12.9 You are required to write a method which takes an anonymous letter L and text from magazine M. Your method is to return true iff L can be written using M i.e. if a letter appears k times in L, it must appear at least k times in M.
+12.9 (CHARACTER COVER SET) You are required to write a method which takes an anonymous letter L and text from magazine M. Your method is to return true iff L can be written using M i.e. if a letter appears k times in L, it must appear at least k times in M.
 
     MAIN IDEA:
         Create hashmap of letters in L to their frequency

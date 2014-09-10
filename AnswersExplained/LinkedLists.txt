@@ -10,54 +10,55 @@ CTCI
             TIME:
             SPACE:
         PSEUDOCODE:
-            void removeDuplicates(Node n):
+            void removeDuplicates(Node node):
                 set <- new HashSet of integers
                 prev <- null Node
-                while n is not null
-                    if set contains n.data
+                while node is not null
+                    if set contains data from node
                         prev.next <- prev.next.next
                     else
-                        add n.data to set
-                        prev <- n
-                    n <- n.next
+                        add data from node to set
+                        prev <- node
+                    advance node
 
     FOLLOW-UP
         MAIN IDEA:
-            At each node of list, create a running pointer to traverse rest
-            Remove nodes that have values matching that iterations start node
+            For each node of list, create a new running pointer
+            Use running pointer to remove nodes with same values as first node
 
         ANALYSIS:
 
         PSEUDOCODE:
-            void removeDuplicates(Node n):
-                curr <- n
-                while curr is not null
-                    runner <- curr
+            void removeDuplicates(Node node):
+                while node is not null
+                    runner <- node
                     while runner.next is not null
-                        if runner.next.data == curr.data
+                        if runner.next's data equals node's data
                             runner.next <- runner.next.next
                         else
-                            runner <- runner.next
-                    curr <- curr.next
+                            advance runner
+                    advance node
 
 2.2 (FIND KTH TO LAST) Implement an algorithm to find the kth to last element of a singly linked list.
 
     MAIN IDEA:
         Have two pointers starting at head of list
         Advance one of the pointers to k-1th position in list
-        Advance both pointers simultaneously until further one reaches end
+        Advance both pointers simultaneously until one reaches end
 
     ANALYSIS:
 
     PSEUDOCODE:
         Node getKthToLast(Node head, int k):
-            if k <= 0 return null
-            p1 <- head
-            p2 <- head
+            if k <= 0
+                return null
+            p1, p2 <- head
             for i = 0 to k - 1
-                if p2 is null return null
+                if p2 is null
+                    return null
                 advance p2
-            if p2 is null return null
+            if p2 is null
+                return null
             while p2 is not null
                 advance p2
                 advance p1
@@ -84,7 +85,7 @@ CTCI
         MAIN IDEA:
             Maintain four pointers, one for start and end of front and back
             Iterate through each node of the list
-            Add the node to the list it belongs to (front if < x, back if > x)
+            Add the node to list it belongs to (front if < x, back if > x)
             Connect front and back lists, and return front's start pointer
 
         PSEUDOCODE:
@@ -94,21 +95,26 @@ CTCI
                     next <- head.next
                     head.next <- null
                     if head.data < x
-                        if frontStart is null
-                            frontStart <- head
-                            frontEnd <- frontStart
-                        else
-                            frontEnd.next <- head
-                            frontEnd <- head
+                        addToFront(head)
                     else
-                        if backStart is null
-                            backStart <- head
-                            backEnd <- backStart
-                        else
-                            backEnd.next <- head
-                            backEnd <- head
+                        addToBack(head)
                     head <- next
-        
+
+            void addToFront(Node head, Node frontStart, Node frontEnd):
+                if frontStart is null
+                    frontStart <- head
+                    frontEnd <- frontStart
+                else
+                    frontEnd.next <- head
+                    frontEnd <- head
+
+            void addToBack(Node head, Node backStart, Node backEnd):
+                if backStart is null
+                    backStart <- head
+                    backEnd <- backStart
+                else
+                    backEnd.next <- head
+                    backEnd <- head
 
     UNSTABLE VERSION:
 
@@ -132,7 +138,6 @@ CTCI
                     head <- next
                 end.next <- null
                 return start
-
 
 EOPI
 
