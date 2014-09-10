@@ -32,14 +32,22 @@ public class RunLengthCompression {
     }
 
     public static int getCompressedLength(String str) {
-        int length = 1;
+        if(str == null || str.isEmpty()){
+            return 0;
+        }
+        int length = 0;
+        int count = 1;
         char curr = str.charAt(0);
         for (int i = 1; i < str.length(); i++) {
             if (str.charAt(i) != curr) {
                 curr = str.charAt(i);
-                length += 2;
+                length += 1 + String.valueOf(count).length();
+            }
+            else{
+                count++;
             }
         }
+        length += 1 + String.valueOf(count).length();
         return length;
     }
 

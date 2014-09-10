@@ -1,0 +1,199 @@
+CTCI
+
+2.1 (REMOVE DUPLICATES) Write code to remove duplicates from an unsorted linked list. FOLLOW UP: How would you solve this problem if a temporary buffer is not allowed?
+
+    ORIGINAL
+        MAIN IDEA:
+            Create a set of values previously seen
+            Traverse list, add value to set if unseen and delete node if seen
+        ANALYSIS:
+            TIME:
+            SPACE:
+        PSEUDOCODE:
+            void removeDuplicates(Node n):
+                set <- new HashSet of integers
+                prev <- null Node
+                while n is not null
+                    if set contains n.data
+                        prev.next <- prev.next.next
+                    else
+                        add n.data to set
+                        prev <- n
+                    n <- n.next
+
+    FOLLOW-UP
+        MAIN IDEA:
+            At each node of list, create a running pointer to traverse rest
+            Remove nodes that have values matching that iterations start node
+
+        ANALYSIS:
+
+        PSEUDOCODE:
+            void removeDuplicates(Node n):
+                curr <- n
+                while curr is not null
+                    runner <- curr
+                    while runner.next is not null
+                        if runner.next.data == curr.data
+                            runner.next <- runner.next.next
+                        else
+                            runner <- runner.next
+                    curr <- curr.next
+
+2.2 (FIND KTH TO LAST) Implement an algorithm to find the kth to last element of a singly linked list.
+
+    MAIN IDEA:
+        Have two pointers starting at head of list
+        Advance one of the pointers to k-1th position in list
+        Advance both pointers simultaneously until further one reaches end
+
+    ANALYSIS:
+
+    PSEUDOCODE:
+        Node getKthToLast(Node head, int k):
+            if k <= 0 return null
+            p1 <- head
+            p2 <- head
+            for i = 0 to k - 1
+                if p2 is null return null
+                advance p2
+            if p2 is null return null
+            while p2 is not null
+                advance p2
+                advance p1
+            return p1
+
+2.3 (DELETE NODE) Implement an algorithm to delete a node i the middle of a singly linked list, given only access to that node.
+
+    MAIN IDEA:
+        Set the node's data and next pointer to be that of the next node
+
+    PSEUDOCODE:
+        boolean deleteNode(Node n):
+            if n is null or n.next is null
+                return false
+            else
+                n.data = n.next.data
+                n.next = n.next.next
+                return true
+
+2.4 (PARTITION AROUND X) Write code to partition a linked list around a value x, such that all nodes less than x come before all nodes greater than or equal to x.
+
+    STABLE VERSION(keep natural ordering):
+
+        MAIN IDEA:
+            Maintain four pointers, one for start and end of front and back
+            Iterate through each node of the list
+            Add the node to the list it belongs to (front if < x, back if > x)
+            Connect front and back lists, and return front's start pointer
+
+        PSEUDOCODE:
+            Node partition(Node head, int x)
+                frontStart, frontEnd, backStart, backEnd <- null
+                while head is not null
+                    next <- head.next
+                    head.next <- null
+                    if head.data < x
+                        if frontStart is null
+                            frontStart <- head
+                            frontEnd <- frontStart
+                        else
+                            frontEnd.next <- head
+                            frontEnd <- head
+                    else
+                        if backStart is null
+                            backStart <- head
+                            backEnd <- backStart
+                        else
+                            backEnd.next <- head
+                            backEnd <- head
+                    head <- next
+        
+
+    UNSTABLE VERSION:
+
+        MAIN IDEA:
+            Maintain two pointers, one for start and one for end
+            Iterate through each node of the list
+            Add the node in front of start or behind end (depending on value)
+            Return start
+
+        PSEUDOCODE
+            Node partition(Node head, int x)
+                start, end <- head
+                while head is not null
+                    next <- head.next
+                    if head.data < x
+                        head.next <- start
+                        start <- head
+                    else
+                        end.next <- head
+                        end <- head
+                    head <- next
+                end.next <- null
+                return start
+
+
+EOPI
+
+7.1 (MERGE TWO SORTED) Let L and F be singly linked lists in which each node holds a number. Assume the numbers in L and F appear in ascending order within the lists. Write a function that takes L and F, and returns the merge of L and F. Your code should use O(1) additional storage - it should reuse the nodes from the lists provided as input. The only field you can change in a node is next.
+
+    MAIN IDEA:
+        Make pointers initialized to head of each list
+        Make pointers to head and tail of M (the new list), initialized to null
+        Iterate through the lists, comparing the values at both pointers
+            If head is null, set head to the pointer of smaller value
+            Else, set tail's next to pointer of smaller value
+            set tail to be the pointer of the smaller value
+            Advance the smaller valued pointer
+        If one of the lists has more elements, add the elements
+
+    ANALYSIS:
+
+    PSEUDOCODE:
+        LLNode mergeTwoSorted(L, F):
+            p1 <- L
+            p2 <- F
+            head, tail <- null
+            while p1 and p2 are both not null
+                ptr <- whichever out of p1 and p2 has smaller value
+                updateList(head, tail, ptr)
+                advance ptr
+            if p1 not null:
+                updateList(head, tail, p1)
+            if p2 not null:
+                updateList(head, tail, p2)
+            return head
+
+        void updateList(Node head, Node tail, Node ptr)
+            if head is null
+                head <- ptr
+            else
+                tail.next <- ptr
+            tail <- ptr
+
+7.2 (FIND CYCLE) Given a reference to the head of a singly linked list L, how would you determine whether L ends in a null or reaches a cycle of nodes? Write a function that returns null if there does not exist a cycle and the reference to the start of the cycle if a cycle is present
+
+    MAIN IDEA:
+        Have two pointers, slow and fast
+        Advance fast by 2 nodes each time, slow by only 1 node each time
+            Stop when either fast can no longer advance or slow equals fast
+        Reset slow to beginning and advance both by 1 until equal
+        Return slow
+
+    ANALYSIS:
+
+    PSEUDOCODE:
+        LLNode checkCyclicity(head)
+            slow, fast <- head
+            while fast and fast.next are not null
+                advance slow by one node
+                advance fast by two nodes
+                if slow equals fast
+                    reset slow to head
+                    while slow does not equal fast
+                        advance both slow and fast by one node
+                    return slow
+            return null
+
+7.4 (OVERLAPPING LISTS NO CYCLES) Let h1 and h2 be the heads of lists L1 and L2, respectively. Assume that L1 and L2 are well-formed, that is each consists of a finite sequence of nodes. (In particular, neither list has a cycle.) How would you determine if there exists a node r reachable from both h1 and h2 by following the next fields? If such a node exists, find the node that appears earliest when traversing the lists. You are constrained to use no more than constant additional storage.

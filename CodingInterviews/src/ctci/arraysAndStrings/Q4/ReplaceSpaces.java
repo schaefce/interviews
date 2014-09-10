@@ -22,7 +22,6 @@ public class ReplaceSpaces {
                 newLength -= 1;
             }
         }
-
     }
 
     public static int getNewLength(char[] str, int length) {
@@ -33,6 +32,27 @@ public class ReplaceSpaces {
             }
         }
         return length + cnt * 2;
+    }
+
+    public static String charArrayToString(char[] array) {
+        StringBuilder buffer = new StringBuilder(array.length);
+        for (char c : array) {
+            if (c == 0) {
+                break;
+            }
+            buffer.append(c);
+        }
+        return buffer.toString();
+    }
+
+    public static void main(String[] args) {
+        String str = "abc d e f";
+        char[] arr = new char[str.length() + 3 * 2 + 1];
+        for (int i = 0; i < str.length(); i++) {
+            arr[i] = str.charAt(i);
+        }
+        replaceSpaces(arr, str.length());
+        System.out.println("\"" + charArrayToString(arr) + "\"");
     }
 
 }

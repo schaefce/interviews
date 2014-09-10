@@ -22,4 +22,5 @@ public class Rotation {
         String combined = s1 + s1;
         return isSubstring(combined, s2);
     }
+    
 }
