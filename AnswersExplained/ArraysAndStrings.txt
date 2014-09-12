@@ -214,7 +214,12 @@ EOPI
                 else
                     swap(A, runner, bigger--)   // increase top
 
-6.14 Check whether a 9x9 2D array representing a partially completed Sudoku is valid. Specifically, check that no row, column, and 3x3 2D subarray contains duplicates. A 0-value in the 2D array indicates the entry is blank; every other entry is in [1,9].
+
+PIE
+
+1. (FIRST NONREPEATED CHARACTER) Write an efficient function to find the first nonrepeated character in a string.
 
     MAIN IDEA:
-        Create boolean array [1...9] of viable, iterate through
+        Create a hash map of characters to integers (counts)
+        Scan string, building hash table
+        Search hash table in order of string, if counts==1 return character
