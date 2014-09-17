@@ -1,0 +1,212 @@
+Behavioral Questions
+- Describe a current project. What was challenging about it? What did you learn from it?
+
+Arrays
+-  sort items to fulfill specific order (a <= b >= c <= d >= e ...)
+- Find the local minima in an array. A local minima is defined as a number whose left and right indices are greater than it in value.
+- An array contains integers with the property that a particular number, called the majority element, appears more than 50% of the time. Give an algo to find this majority number
+- Also asked for maximum contiguous subarray problem
+- Build a pseudorandom maze. Write a method to deep copy a graph. Given an n x n matrix of numbers, how do I find a number?
+- O(n*log n) time to find the k-th largest element of a n*n matrix, given every row or column of the matrix is pre-sorted.
+- O(log n) tome to find the k-th largest element of two pre-sorted array.
+- Given two sorted arrays with N elements each, find the median of their union in O(log n).
+- sort the array so that the odd number in front of the even number and their relative order doesn't change in O(n)
+- The most unexpected question was to get the median of an array, which is trivial for sorted arrays (in fact I did the solution for sorted ones). The problem was that the solution had to be done for unsorted ones.
+- Write code to verify a Sudoku board.
+- Given a 2-d array, write code to print it out in a snake pattern. For example, if the array is this:
+1, 2, 3
+4, 5, 6
+7, 8, 9
+the routine prints this:
+1,2,3,6,9,8,7,4,5
+The array is an NxN array.
+- Merge k sorted int arrays, each array containing n ints, into 1 array. And give the complexity
+- two numbers sum up to some designated number.
+- Array of 100 integers from 1 to 100, shuffled. One integer is taken out, find that integer.
+- Same as above but another one is taken out again. Find the two missing nubmers
+- Find a number in a sorted array with duplicates in O(log n) time.
+
+
+Strings
+- StringTokenizer implementation
+- Given set of characters duplicates possible, and given dictionary (list of words). Find longest word from dictionary that can be made from given characters. How will you do it if '*' (matches one wild character) is also included?
+- utf-8 byte stream verification and character extraction.
+- if a person dials a sequence of numbers on the telephone, what possible words/strings can be formed from the letters associated with those numbers?
+- Find a repeated number in a list of numbers
+- You're given a string, and you want to split it into as few strings as possible such that each string is a palindrome.
+- Find the most frequent letters in a string.
+- Reverse all the words in a string
+- Implement a function boolean matches(String text, String pattern) to find match pattern in the string, pattern can be seperated but the order of letters in pattern cannot be changed.
+- Write an algorithm to print out all the words in a boggle board
+- find the number of repeating substrings within a given string ("abababab" = 4 times "ab"
+- Remove duplicate characters from a string
+- Given a string pattern of 0s, 1s, and ?s (wildcards), generate all 0-1 strings that match this pattern.
+e.g. 1?00?101 -> [10000101, 10001101, 11000101, 11001101].
+You can generate the strings in any order that suits you.
+- find the minimum window in a string which contains a list of characters.
+- find the longest prefix
+- check if a string matches a regular expression
+- Given a set of strings, a number 'n', and a function that takes a string and gives back a score, find the n largest scored strings in the set.
+- Write a function to convert a collection of strings into a single string and a function to convert it back.
+
+Linked Lists
+- How would you reverse a linked-list?
+- Write code to find duplicates in a linked list
+- Write a function to modify a singly linked list, appending copies of the first N-1 elements to the end in reverse order. For example, ['A', 'B', 'C', 'D'] becomes ['A', 'B', 'C', 'D', 'C', 'B', 'A']
+
+Stacks
+- Implement a stack with find_min api as well.
+- Write code that sorts a stack
+- Write a parser of some language the interviewer made up
+- Generalized tower of hanoi problem (n pegs)
+- Write a substring text parser.
+- Implement a stack that pops out the most frequently added item.
+
+Binary Search Trees
+- Write a function to validate a binary search tree.
+- Writing a binary search tree
+- Two find the lowest common parent for two nodes in a BST
+
+Trees
+- LCA of 'k' given nodes in an arbitrary tree having N nodes?
+- In a given binary tree, find the number of elements that lie in a given range.
+- Given a Binary Tree, and a value, find all possible number of ways that sum up to the given value.
+- Write a program print the outsides nodes in a binary tree.
+- n-ary tree serialize and deserialize question. Write both methods.
+
+Hash Tables
+- Describe an implementation for a hash table. Explain how the data structure changes as more items are added and sketch a proof for the amortized complexity of operations.
+- How do you implement a hash?
+- Compare HashTable and Binary Tree(pros and cons, why use binary tree in some place, the time complexity of insert, delete of hashtable and binarytree)
+- If you have a ransom letter and magazines, can you construct the ransom letter from the words in the magazine.
+
+Graphs
+- Implement on a board a shortest path algorithm when traveling from point A to point B on a board. Once you produce a solution, they throw modifications to an initial problem like what if you know that points x, y, z cannot be used in a path.
+- Pots of gold game: Two players A & B. There are pots of gold arranged in a line, each containing some gold coins (the players can see how many coins are there in each gold pot - perfect information). They get alternating turns in which the player can pick a pot from one of the ends of the line. The winner is the player which has a higher number of coins at the end. The objective is to "maximize" the number of coins collected by A, assuming B also plays optimally. A starts the game
+- implement DFS with a twist.
+- no. of paths between two points in a grid
+- Given a set top box:
+a, b, c, d, e,
+f, g, h, i, j,
+k, l, m, n, o
+p, q, r, s, t
+u, v, w, x, y
+z
+Write code to give the character sequence given a word, For example, if the word is "CON", the function will print this:
+Right//now we're at B
+Right//now we're at C
+OK//to select C
+Down
+DOwn
+Right
+Right
+OK//to select O
+Left//now at N
+OK//to select N
+note: Be careful when you're at Z. if you go to the right, you will get stuck.
+Afterwards, the interviewer adds a space to the right of 'Z' to test the code
+- Given a 'friendship' graph, how would you generate friend suggestions for people, and how would you distribute the data across machines?
+-  how to implement search in G+
+- Given a matrix of 0s and 1s, write code to get all the different ways of getting from a given cell to another, such that you can't walk through any of the cells with 0s in them.
+- You have a n number of cities. Lets say city 1 has some information that needs to be sent to all other n-1 cities using minimal cost. Cost between each pair of cities is given. any number of cities can transmit the information once they receive the information but the overall total cost should be minimum
+- Given a graph, find if it represents a tree.
+
+Searching
+- Find the common numbers in two text files.
+- Given X number of search terms, write an algorithm that will return the smallest substring from an article that contains all of the search terms.
+- finding the k-th largest element without full sorting
+
+Sorting
+- How would you sort 10 million phone numbers?
+- How would you write a pancake sort routine
+- Sorting in general with big-O complexity, followed by partition sort (quick sort)
+- I was given a number of intervals on the integer number line and had to write a program in Java that takes two sets of intervals and creates a set of intervals that combines them.
+- favorite sorting algorithm and why, advantages
+- Explain how quick sort and merge sort work
+
+Math
+- you have a sequence where each number is a multiple of 2 or 5 (so: 2^i * 5^j). he gave the beginning of the sequence as 1,2,3,4,5,8,10,16... and asked me to find an algorithm to calculate the next number in the sequence.
+- You have a simple search consisting of search terms that are OR'ed together, ie: Cats AND Dogs. You have a set of documents possibly containing those terms and you have the positions of those terms in each document. How would you search for Cats AND Dogs?
+-  general info about fibonacci sequence and few questions in the field of algebra (modulo operations).
+- asked to write a function to determine if numbers were a power of X.
+- Count the number of positive integers less than N that does not contains digit 4.
+
+Recursion
+- Write a function the generate Fibonacci sequence
+-  Implement x^n fast (divide and conquer)
+- Implement a function that calculates in how many ways it is possible to climb a stair given that you can raise one step or two step at a time. (solution Fibonacci like)
+- Given a string representing a personal working history.
+Two "Absence"s will raise the alarm. Three successive "Late"s will raise the alarm. Write a method to generate all cases that will raise the alarm for n days.
+
+eg. for five days
+      AOOOA raise alarm
+      ALLOL won't
+- A^2+B^2+C^2+D^2= N. Given a N, print out all possible combination for ABCD. Can utilize DP?
+
+Geometry Related
+- Given a set of shapes in 2D space, and a coordinate pair, write a routine that returns true if any of the shapes overlap the coordinate pair.
+- Given set of points, find line with max points on it.
+- There are n points in a plane. Find the max number of points that lie on a line
+- Describe and code and efficient algorithm to decide if two rectangles in a coordinate plane are overlapping or not. Include data structure definition and any assumptions you make about the coordinate plane (location of the origin etc).
+- Given a set of 2D coordinates for the 4 corners of each building in a city skyline, find the outline of all the buildings. Buildings may or may not overlap.
+
+Dynamic Programming
+- Implement shortest path fast
+
+Java Implementation Questions
+- What is the relationship between equals(Object o) and hashCode() in Java? How would you implement each method?
+- Write an iterator over multiple collections.
+- How would you implement a singleton in the language of your choice?
+
+
+Java Knowledge Questions
+- I have superclass A and subclass B of superclass A. B overrides a function foo() in A. I have an instance of class B. How do I call foo() but using class A's version
+
+OOP Implementations
+- Write a class to define a deck of cards, and write shuffle function for the cards
+- Design an algorithm to play a game of Frogger and then code the solution. The object of the game is to direct a frog to avoid cars while crossing a busy road. You may represent a road lane via an array. Generalize the solution for an N-lane road.
+- Most phones now have full keyboards. Before there there three letters mapped to a number button. Describe how you would go about implementing spelling and word suggestions as people type.
+- class to create timer
+- Card game, given 4 cards. If by +,-,/,* and () you can make 24, you win. Write a program to play this game
+
+Design
+- Design Google news.
+- Access card system design
+- Design a complete system to function just like the twitter.
+- Design an RPC protocol.
+- Design a system or algorithm to catalog all of the worlds books?
+- Design a system that accepts a small amount of data from every user, and serves it up internally at a Google scale without knowing google's architecture, replication, or authentication services.
+- Design discussion involving a distributed system with writes/reads going on at different sites in parallel.
+- Design a data structure that can do the followings in O(1) time:
+(1) insert
+(2) remove
+(3) getRandom
+- You have a network of friends (linked in friends, facebook friends, etc). How would you keep track of all the people you are connected to.
+- how to write a connection pool (i.e, a class that returns connections to the user, and if the user is done, returns them back to the pool)
+- Design a class to record a lot of ints, and make it efficient to retrieve the median.
+- how to design a excel
+- Design a networked 'snake' multiplayer game. What are the problems and issues to be solved? When the network 'splits' I want the game to continue for all player
+
+
+
+Cache Memory and Servers
+- Create a fast cached storage mechanism that, given a limitation on the amount of cache memory, will ensure that only the least recently used items are discarded when the cache memory is reached when inserting a new item. It supports 2 functions: String get(T t) and void put(String k, T t).
+- Create a cost model that allows Google to make purchasing decisions on to compare the cost of purchasing more RAM memory for their servers vs. buying more disk space.
+- design algorithm to reverse the content in the memory.
+- Given a directory with lots of files, find the files that have the same content (the file names are different).
+- given K files and N machines, N is much larger than K. given function long sum(int fileID,int machineID) which use particular machine calculate the sum of file. Question:write function which calculate the sum of all files
+- Design a global system performance monitoring network (basically know the differences/advantages/disadvantages associated with TCP/UDP)
+- Given a disk running out of space, find a way to search whole hard drive to dedup in file level. Goal is copying as less data as possible to another hard drive without losing any info. Write it with any language you want.
+- how to optimize/parallel a cache for an mobile app
+
+
+Threads and Locks
+- use mutex and semaphore to implement producer-consumer problem
+- Something on optimizong a DFS program using parallel computing.
+- How would you synchronize a linked list across multiple computers. If nodes are added/removed to a linked list on one computer, all others must reflect this change. Concurrancy must be accounted for
+- Design a thread-safe circular queue using fixed size memory allocation. Any type of data could be pushed in. No overwrite is allowed. Further: Optimize performance, can you do it without lock?s
+
+Other
+- How do you check if a URL is bad really fast in Google server. The point is for the user not to notice the lag in the checking
+- generate a random sequence of number for Lotto extraction.
+- Find the longest word in a dictionary, such that the word can be built one character at a time, and all substrings are words in the dictionary. A new character can be added anywhere.
