@@ -30,7 +30,6 @@ public class CreateBSTFromSortedArray {
     public static void main(String[] args) {
         int[] data = { 0, 3, 5, 6, 7, 9, 10, 11 };
         BTreePrinter.printNode(createBST(data));
-
     }
 
 }

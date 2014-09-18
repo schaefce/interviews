@@ -11,11 +11,13 @@ import java.util.Stack;
 public class StackWithSort extends Stack<Integer> {
     public Stack<Integer> sort(Stack<Integer> s1) {
         Stack<Integer> s2 = new Stack<Integer>();
-        Integer tmp = s1.pop();
-        while (!s2.isEmpty() && tmp.compareTo(s2.peek()) < 0) {
-            s1.push(s2.pop());
+        while(!s1.isEmpty()){
+            Integer tmp = s1.pop();
+            while (!s2.isEmpty() && tmp.compareTo(s2.peek()) < 0) {
+                s1.push(s2.pop());
+            }
+            s2.push(tmp);
         }
-        s2.push(tmp);
         return s2;
     }
 

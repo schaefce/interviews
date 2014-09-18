@@ -9,7 +9,7 @@ public class Permutation {
         if (s1.length() != s2.length()) {
             return false;
         }
-        int[] charCounts = new int[256];
+        int[] charCounts = new int[128];
         for (char c : s1.toCharArray()) {
             charCounts[c]++;
         }
