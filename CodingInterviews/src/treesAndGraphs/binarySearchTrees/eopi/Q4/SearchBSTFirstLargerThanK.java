@@ -1,6 +1,6 @@
-package eopi.binarySearchTrees.Q4;
+package treesAndGraphs.binarySearchTrees.eopi.Q4;
 
-import eopi.library.BTNodeTemplate.BTNode;
+import library.eopi.BTNodeTemplate.BTNode;
 
 /*
  * 14.4 Write a function that takes a BST T and a key k, and returns the first

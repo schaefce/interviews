@@ -1,7 +1,7 @@
-package eopi.linkedLists.Q1;
+package linkedLists.eopi.Q1;
 
-import eopi.library.LLNodeTemplate.LLNode;
-import eopi.utils.Ref;
+import library.eopi.LLNodeTemplate.LLNode;
+import library.eopi.utils.Ref;
 
 /*
  * 7.1 Let L and F be singly linked lists in which each node holds a number.

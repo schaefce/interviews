@@ -1,4 +1,4 @@
-package eopi.library;
+package library.eopi;
 
 public class BTNodeTemplate {
     public static class BTNode<Item> {

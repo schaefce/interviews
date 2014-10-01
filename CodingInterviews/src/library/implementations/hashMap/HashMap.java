@@ -1,4 +1,4 @@
-package dataStructures.implementations.hashMap;
+package library.implementations.hashMap;
 
 /* My implementation of a hashmap */
 

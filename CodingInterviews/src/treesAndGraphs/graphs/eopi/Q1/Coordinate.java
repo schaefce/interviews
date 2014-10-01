@@ -1,4 +1,4 @@
-package eopi.graphs.Q1;
+package treesAndGraphs.graphs.eopi.Q1;
 
 public class Coordinate {
     public int x;

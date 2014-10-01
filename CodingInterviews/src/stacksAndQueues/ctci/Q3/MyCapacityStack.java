@@ -1,4 +1,4 @@
-package ctci.stacksAndQueues.Q3;
+package stacksAndQueues.ctci.Q3;
 
 public class MyCapacityStack<Item> {
 

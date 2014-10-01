@@ -1,7 +1,7 @@
-package eopi.binarySearchTrees.Q1;
+package treesAndGraphs.binarySearchTrees.eopi.Q1;
 
-import eopi.library.BTNodeTemplate.BTNode;
-import eopi.library.BTreePrinter;
+import library.eopi.BTNodeTemplate.BTNode;
+import library.eopi.BTreePrinter;
 
 /*
  * 14.1 Write a function that takes as input the root of a binary tree whose

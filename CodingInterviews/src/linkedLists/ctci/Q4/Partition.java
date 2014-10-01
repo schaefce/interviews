@@ -1,6 +1,6 @@
-package ctci.linkedLists.Q4;
+package linkedLists.ctci.Q4;
 
-import CtCILibrary.LinkedListNode;
+import library.ctci.LinkedListNode;
 
 /*
  * 2.4 Write code to partition a linked list around a value x, such that all

@@ -1,4 +1,4 @@
-package ctci.stacksAndQueues.Q1;
+package stacksAndQueues.ctci.Q1;
 
 /*
  * Implement three stacks using a single array

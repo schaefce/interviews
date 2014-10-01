@@ -1,4 +1,4 @@
-package ctci.stacksAndQueues.Q7;
+package stacksAndQueues.ctci.Q7;
 
 public abstract class Animal {
     private int arrivalTime;

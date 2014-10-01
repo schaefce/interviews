@@ -1,4 +1,4 @@
-package eopi.searching.Q3;
+package searching.eopi.Q3;
 
 /*
  * 11.3 Design an efficient algorithm that takes a sorted array A of distinct

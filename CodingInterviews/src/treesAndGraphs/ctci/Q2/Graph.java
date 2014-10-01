@@ -1,4 +1,4 @@
-package ctci.treesAndGraphs.Q2;
+package treesAndGraphs.ctci.Q2;
 
 public class Graph {
     private Node vertices[];

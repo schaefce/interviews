@@ -1,4 +1,4 @@
-package ctci.stacksAndQueues.Q6;
+package stacksAndQueues.ctci.Q6;
 
 import java.util.Stack;
 
@@ -11,7 +11,7 @@ import java.util.Stack;
 public class StackWithSort extends Stack<Integer> {
     public Stack<Integer> sort(Stack<Integer> s1) {
         Stack<Integer> s2 = new Stack<Integer>();
-        while(!s1.isEmpty()){
+        while (!s1.isEmpty()) {
             Integer tmp = s1.pop();
             while (!s2.isEmpty() && tmp.compareTo(s2.peek()) < 0) {
                 s1.push(s2.pop());

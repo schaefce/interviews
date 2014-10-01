@@ -1,6 +1,6 @@
-package ctci.treesAndGraphs.Q5;
+package treesAndGraphs.ctci.Q5;
 
-import CtCILibrary.TreeNode;
+import library.ctci.TreeNode;
 
 /* 4.5 Implement a function to check if a binary tree is a binary search tree */
 public class CheckIfBST {

@@ -1,10 +1,10 @@
-package eopi.library;
+package library.eopi;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import eopi.library.BTNodeTemplate.BTNode;
+import library.eopi.BTNodeTemplate.BTNode;
 
 public class BTreePrinter {
 

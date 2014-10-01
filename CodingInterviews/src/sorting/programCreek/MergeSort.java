@@ -1,4 +1,4 @@
-package programCreek.sorting;
+package sorting.programCreek;
 
 import java.util.Arrays;
 

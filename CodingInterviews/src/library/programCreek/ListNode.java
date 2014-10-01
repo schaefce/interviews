@@ -1,4 +1,4 @@
-package programCreek.library;
+package library.programCreek;
 
 public class ListNode<E> {
     public E value;

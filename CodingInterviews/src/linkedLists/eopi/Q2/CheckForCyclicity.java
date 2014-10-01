@@ -1,6 +1,6 @@
-package eopi.linkedLists.Q2;
+package linkedLists.eopi.Q2;
 
-import eopi.library.LLNodeTemplate.LLNode;
+import library.eopi.LLNodeTemplate.LLNode;
 
 /*
  * 7.2 Given a reference to the head of a singly linked list L, how would you

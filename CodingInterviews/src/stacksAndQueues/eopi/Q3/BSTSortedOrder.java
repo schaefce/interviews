@@ -1,8 +1,8 @@
-package eopi.stacksAndQueues.Q3;
+package stacksAndQueues.eopi.Q3;
 
 import java.util.Stack;
 
-import eopi.library.BTNodeTemplate.BTNode;
+import library.eopi.BTNodeTemplate.BTNode;
 
 /*
  * 8.3 Given a BST node n, print all the keys at n and its descendants. The

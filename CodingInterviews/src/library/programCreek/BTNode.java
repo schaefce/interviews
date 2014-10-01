@@ -1,4 +1,5 @@
-package programCreek.library;
+package library.programCreek;
+
 public class BTNode<E> {
     public E value;
     public BTNode<E> right;
@@ -7,6 +8,5 @@ public class BTNode<E> {
     public BTNode(E data) {
         this.value = data;
     }
-
 
 }

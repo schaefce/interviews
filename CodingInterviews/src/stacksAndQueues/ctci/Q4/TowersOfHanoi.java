@@ -1,4 +1,4 @@
-package ctci.stacksAndQueues.Q4;
+package stacksAndQueues.ctci.Q4;
 
 import java.util.Stack;
 

@@ -1,6 +1,6 @@
-package eopi.linkedLists.Q4;
+package linkedLists.eopi.Q4;
 
-import eopi.library.LLNodeTemplate.LLNode;
+import library.eopi.LLNodeTemplate.LLNode;
 
 /*
  * 7.4 Let h1 and h2 be the heads of lists L1 and L2, respectively. Assume that

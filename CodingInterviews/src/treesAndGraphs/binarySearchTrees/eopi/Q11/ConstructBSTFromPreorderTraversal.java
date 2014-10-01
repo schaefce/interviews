@@ -1,4 +1,4 @@
-package eopi.binarySearchTrees.Q11;
+package treesAndGraphs.binarySearchTrees.eopi.Q11;
 
 /*
  * 14.11 Which traversal orders- inorder, preorder, and postorder- of a BST can
@@ -10,7 +10,7 @@ package eopi.binarySearchTrees.Q11;
 import java.util.ArrayList;
 import java.util.List;
 
-import eopi.library.BTNodeTemplate.BTNode;
+import library.eopi.BTNodeTemplate.BTNode;
 
 // TODO: determine why it is preorder
 public class ConstructBSTFromPreorderTraversal {

@@ -1,4 +1,4 @@
-package eopi.library;
+package library.eopi;
 
 public class LLNodeTemplate {
     public static class LLNode<Item> {

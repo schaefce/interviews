@@ -1,6 +1,6 @@
-package ctci.linkedLists.Q2;
+package linkedLists.ctci.Q2;
 
-import CtCILibrary.LinkedListNode;
+import library.ctci.LinkedListNode;
 
 /*
  * 2.2 Implement an algorithm to find the kth to last element of a singly linked

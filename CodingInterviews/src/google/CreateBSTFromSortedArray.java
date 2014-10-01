@@ -1,7 +1,7 @@
 package google;
 
-import eopi.library.BTNodeTemplate.BTNode;
-import eopi.library.BTreePrinter;
+import library.eopi.BTNodeTemplate.BTNode;
+import library.eopi.BTreePrinter;
 
 /*
  * int[] data create BST from integer array of data (sorted) class Node{ int

@@ -1,4 +1,4 @@
-package interviewCake;
+package stacksAndQueues.interviewCake;
 
 import java.util.Stack;
 

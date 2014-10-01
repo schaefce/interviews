@@ -1,6 +1,6 @@
-package programCreek.linkedLists;
+package linkedLists.programCreek;
 
-import programCreek.library.ListNode;
+import library.programCreek.ListNode;
 
 /*
  * You are given two linked lists representing two non-negative numbers. The

@@ -1,4 +1,4 @@
-package eopi.hashTables.Q1;
+package hashTables.eopi.Q1;
 
 /* Design a hash function that is suitable for words in a dictionary */
 public class DictionaryHash {

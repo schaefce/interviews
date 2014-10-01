@@ -1,8 +1,11 @@
-package eopi.binarySearchTrees.Q6;
+package treesAndGraphs.binarySearchTrees.eopi.Q6;
 
 import java.util.Random;
 
-/* 14.6 How would you build a BST of minimum possible height from a sorted array A? */
+/*
+ * 14.6 How would you build a BST of minimum possible height from a sorted array
+ * A?
+ */
 
 public class BuildBSTFromSortedArray {
     public static class Node {

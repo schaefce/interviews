@@ -1,4 +1,4 @@
-package eopi.hashTables.Q9;
+package hashTables.eopi.Q9;
 
 /*
  * 12.9 You are required to write a method which takes an anonymous letter L and

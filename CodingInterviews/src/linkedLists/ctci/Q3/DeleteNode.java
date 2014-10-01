@@ -1,10 +1,10 @@
-package ctci.linkedLists.Q3;
+package linkedLists.ctci.Q3;
 
-import CtCILibrary.LinkedListNode;
+import library.ctci.LinkedListNode;
 
 /*
- * 2.3 Implement an algorithm to delete a node i the middle of a singly linked list,
- * given only access to that node.
+ * 2.3 Implement an algorithm to delete a node i the middle of a singly linked
+ * list, given only access to that node.
  */
 public class DeleteNode {
 

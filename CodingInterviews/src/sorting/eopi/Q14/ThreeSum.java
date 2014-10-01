@@ -1,4 +1,4 @@
-package eopi.sorting.Q14;
+package sorting.eopi.Q14;
 
 import java.util.Arrays;
 

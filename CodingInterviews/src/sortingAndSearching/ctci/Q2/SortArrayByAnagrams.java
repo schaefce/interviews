@@ -1,4 +1,4 @@
-package ctci.sortingAndSearching.Q2;
+package sortingAndSearching.ctci.Q2;
 
 import java.util.Arrays;
 import java.util.HashMap;

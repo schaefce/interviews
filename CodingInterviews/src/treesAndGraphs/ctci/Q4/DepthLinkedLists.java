@@ -1,4 +1,4 @@
-package ctci.treesAndGraphs.Q4;
+package treesAndGraphs.ctci.Q4;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -8,7 +8,7 @@ import java.util.LinkedList;
  * have D linked lists)
  */
 
-import CtCILibrary.TreeNode;
+import library.ctci.TreeNode;
 
 // Blegh
 public class DepthLinkedLists {

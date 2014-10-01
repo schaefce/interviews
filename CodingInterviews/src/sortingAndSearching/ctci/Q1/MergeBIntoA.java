@@ -1,4 +1,4 @@
-package ctci.sortingAndSearching.Q1;
+package sortingAndSearching.ctci.Q1;
 
 import java.util.Arrays;
 

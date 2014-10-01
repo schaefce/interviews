@@ -1,6 +1,6 @@
-package ctci.treesAndGraphs.Q3;
+package treesAndGraphs.ctci.Q3;
 
-import CtCILibrary.TreeNode;
+import library.ctci.TreeNode;
 
 /*
  * 4.3 Given a sorted (increasing order) array with unique integer elements,

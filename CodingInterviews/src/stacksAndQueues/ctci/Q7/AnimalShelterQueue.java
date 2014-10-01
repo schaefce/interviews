@@ -1,4 +1,4 @@
-package ctci.stacksAndQueues.Q7;
+package stacksAndQueues.ctci.Q7;
 
 import java.util.LinkedList;
 

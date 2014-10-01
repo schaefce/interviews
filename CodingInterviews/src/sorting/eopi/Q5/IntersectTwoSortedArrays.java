@@ -1,4 +1,4 @@
-package eopi.sorting.Q5;
+package sorting.eopi.Q5;
 
 import java.util.ArrayList;
 import java.util.List;

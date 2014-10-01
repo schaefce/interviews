@@ -1,8 +1,8 @@
-package programCreek.treesAndHeaps;
+package treesAndGraphs.programCreek;
 
 import java.util.Stack;
 
-import programCreek.library.BTNode;
+import library.programCreek.BTNode;
 
 /* Given a binary tree, flatten it to a linked list in-place. */
 public class FlattenBTree {

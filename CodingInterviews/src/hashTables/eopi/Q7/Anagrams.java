@@ -1,4 +1,4 @@
-package eopi.hashTables.Q7;
+package hashTables.eopi.Q7;
 
 import java.util.ArrayList;
 import java.util.Arrays;

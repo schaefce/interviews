@@ -1,4 +1,4 @@
-package eopi.stacksAndQueues.Q5;
+package stacksAndQueues.eopi.Q5;
 
 import java.util.Stack;
 

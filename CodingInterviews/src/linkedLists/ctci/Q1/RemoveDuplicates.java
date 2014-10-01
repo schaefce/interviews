@@ -1,9 +1,9 @@
-package ctci.linkedLists.Q1;
+package linkedLists.ctci.Q1;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import CtCILibrary.LinkedListNode;
+import library.ctci.LinkedListNode;
 
 /*
  * 2.1 Write code to remove duplicates from an unsorted linked list. FOLLOW UP

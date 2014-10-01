@@ -1,11 +1,11 @@
-package eopi.searching.Q2;
+package searching.eopi.Q2;
 
 import java.util.Arrays;
 
-/* 
- * 11.2 Design an efficient algorithm that takes a sorted array A and a key k 
- * and finds the index of the first occurrence of an element larger than k; 
- * return -1 if every element is less than or equal to k 
+/*
+ * 11.2 Design an efficient algorithm that takes a sorted array A and a key k
+ * and finds the index of the first occurrence of an element larger than k;
+ * return -1 if every element is less than or equal to k
  */
 
 public class FirstLargerThanK {
