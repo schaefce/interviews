@@ -14,7 +14,7 @@ import java.util.Set;
  * Given: start = "hit" end = "cog" dict = ["hot","dot","dog","lot","log"]
  * Return [ ["hit","hot","dot","dog","cog"], ["hit","hot","lot","log","cog"] ]
  */
-public class AttemptOne {
+public class AttemptThree {
 
     public LinkedList<LinkedList<String>> findLadders(String start, String end,
             Set<String> dict) {
@@ -30,7 +30,7 @@ public class AttemptOne {
             boolean finished = false;
             int minSize = Integer.MAX_VALUE;
             for (int j = 0; j < listOfLadders.size(); j++) {
-                LinkedList<String> list = listOfLadders.poll();
+                LinkedList<String> list = listOfLadders.pop();
                 if (finished && list.size() >= minSize) {
                     continue;
                 }

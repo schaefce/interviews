@@ -1,18 +1,21 @@
 package google;
 
-public class QuickSort {
+import java.util.Arrays;
 
-    public void sort(int[] array, int left, int right) {
-        int index = partition(array, left, right);
-        if (left < index - 1) {
-            sort(array, left, index - 1);
-        }
-        if (index < right) {
-            sort(array, index, right);
-        }
+public class QuickSort {
+    public static void sort(int[] array) {
+        sort(array, 0, array.length - 1);
     }
 
-    public int partition(int[] array, int left, int right) {
+    public static void sort(int[] array, int left, int right) {
+        if (left >= right)
+            return;
+        int index = partition(array, left, right);
+        sort(array, left, index - 1);
+        sort(array, index, right);
+    }
+
+    public static int partition(int[] array, int left, int right) {
         int pivot = array[(left + right) / 2];
         while (left <= right) {
             // find element on left that should be on right
@@ -30,9 +33,16 @@ public class QuickSort {
         return left; // array[0...left] < array[left] < array[left... end]
     }
 
-    public void swap(int[] array, int left, int right) {
+    public static void swap(int[] array, int left, int right) {
         int tmp = array[left];
         array[left] = array[right];
         array[right] = tmp;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { -1, 2, 5, 7, 3, 10, 40, 1, 7, -1, 4, 10 };
+        System.out.println("Unsorted: " + Arrays.toString(arr));
+        sort(arr);
+        System.out.println("Sorted: " + Arrays.toString(arr));
     }
 }

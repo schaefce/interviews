@@ -12,28 +12,33 @@ public class QuickSort {
     private static void sort(int[] arr, int lo, int hi) {
         if (lo < hi) {
             int j = partition(arr, lo, hi);
-            sort(arr, lo, j);
+            sort(arr, lo, j - 1);
             sort(arr, j + 1, hi);
         }
     }
 
     private static int partition(int[] arr, int lo, int hi) {
-        int pivot = arr[lo + (hi - lo) / 2];
+        int mid = lo + (hi - lo) / 2;
+        int pivotValue = arr[mid];
         int i = lo;
-        int j = hi;
+        int j = hi + 1;
+        swap(arr, i, mid);
+
         while (i < j) {
-            while (arr[i] < pivot) {
-                i++;
+            while (arr[++i] < pivotValue) {
+                if (i == hi)
+                    break;
             }
-            while (arr[j] > pivot) {
-                j--;
+            while (arr[--j] > pivotValue) {
+                if (lo == j)
+                    break;
             }
-            if (i < j) {
-                swap(arr, i, j);
-                i++;
-                j--;
+            if (i >= j) {
+                break;
             }
+            swap(arr, i, j);
         }
+        swap(arr, lo, j);
         return j;
 
     }
@@ -42,10 +47,11 @@ public class QuickSort {
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;
+
     }
 
     public static void main(String[] args) {
-        int[] arr = { 2, 5, 7, 3, 10, 40, 1, -1, 4 };
+        int[] arr = { -1, 2, 5, 3, 40, 1, 10, 7, 10, -1, 4, 10 };
         System.out.println("Unsorted: " + Arrays.toString(arr));
         sort(arr);
         System.out.println("Sorted: " + Arrays.toString(arr));

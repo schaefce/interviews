@@ -1,4 +1,4 @@
-package arraysAndStrings.strings.leetCode.lcp;
+package arraysAndStrings.strings.leetCode;
 
 import java.util.Arrays;
 
